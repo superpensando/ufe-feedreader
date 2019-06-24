@@ -65,7 +65,6 @@ function init() {
 
                 /* Loop the feeds and remove all the theme classes*/           
                 allFeeds.forEach(function(feed) {
-                    console.log(`feed-${j}`);
                     theme.removeClass(`feed-${j}`);
                     j++;
                  });
