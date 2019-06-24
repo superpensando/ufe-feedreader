@@ -43,6 +43,7 @@ function init() {
  function loadFeed(id, cb) {
      var feedUrl = allFeeds[id].url,
          feedName = allFeeds[id].name;
+         feedId = [id];
 
      $.ajax({
        type: "POST",
@@ -53,11 +54,24 @@ function init() {
 
                  var container = $('.feed'),
                      title = $('.header-title'),
+                     theme = $('body'),
+                     j = 0,
                      entries = result.feed.entries,
                      entriesLen = entries.length,
                      entryTemplate = Handlebars.compile($('.tpl-entry').html());
 
                  title.html(feedName);   // Set the header text
+               
+
+                /* Loop the feeds and remove all the theme classes*/           
+                allFeeds.forEach(function(feed) {
+                    console.log(`feed-${j}`);
+                    theme.removeClass(`feed-${j}`);
+                    j++;
+                 });
+
+                 theme.addClass(`feed-${feedId}`); //Set the theme class
+
                  container.empty();      // Empty out all previous entries
 
                  /* Loop through the entries we just loaded via the Google
@@ -108,7 +122,6 @@ $(function() {
     allFeeds.forEach(function(feed) {
         feed.id = feedId;
         feedList.append(feedItemTemplate(feed));
-
         feedId++;
     });
 

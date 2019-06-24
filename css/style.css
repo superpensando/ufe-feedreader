@@ -1,6 +1,6 @@
 *,
 *:after,
-*:before: {
+*:before {
     box-sizing: inherit;
 }
 
@@ -20,9 +20,6 @@ a {
     color: #111;
 }
 
-a:hover h2 {
-    text-decoration: underline;
-}
 
 h1 {
     display: inline-block;
@@ -33,15 +30,23 @@ h1 {
 h2 {
     font-weight: 400;
     margin: 0;
+    font-size:1em; 
 }
 
+/*
+ *
+ * Header
+ *
+ */
+
 .header {
-    background: #4caf50;
+    background: #02b3e4;
     color: #fff;
     position: fixed;
     top: 0;
     width: 100%;
     padding: 0.5em 1em;
+
 }
 
 .icon-list {
@@ -49,15 +54,30 @@ h2 {
     color: #FFF;
 }
 
+
+/*
+ *
+ * Slide Menu
+ *
+ */
+
+.menu-hidden .slide-menu {
+    transform: translate3d(-12em, 0, 0);
+    transition: transform 0.2s;
+    opacity: 0; 
+}
+
 .slide-menu {
     position: absolute;
     top: 3.5em;
     padding: 1em;
-    background: #4caf50;
-    height: 100%;
+    background: #02b3e4;
+    height: calc(100% - 3.5em);
     width: 10em;
     transform: translate3d(0, 0, 0);
     transition: transform 0.2s;
+    opacity: 1;
+    z-index:1; 
 }
 
 .slide-menu ul {
@@ -76,17 +96,108 @@ h2 {
     padding: 0.5em 0;
 }
 
-.menu-hidden .slide-menu {
-    transform: translate3d(-12em, 0, 0);
-    transition: transform 0.2s;
-}
+
+/*
+ *
+ * Feed
+ *
+ */
 
 .feed {
-    margin: 4em 0 0;
+    margin: 4em 0 1em 0;
+}
+
+.entry-link:hover {
+    text-decoration: none;
+    color: #02b3e4;
+}
+.entry-link:last-child .entry {
+    border-bottom: none; 
 }
 
 .entry {
-    border-bottom: 1px solid #ddd;
-    padding: 1em;
+    border-bottom: 1px solid #02b3e4;
+    padding: 0.5em 1em;
     margin: 0.5em 0;
 }
+
+
+/*
+ *
+ * Jasmine Framework
+ *
+ */
+
+.jasmine_html-reporter {
+    margin:1em; 
+}
+
+/*
+ *
+ * Themes
+ *
+ */
+
+/*Feed-0*/
+
+ .feed-0 .header {
+    background: #02b3e4;
+ }
+ .feed-0 .slide-menu {
+    background: #02b3e4;
+ }
+ .feed-0 .entry {
+    border-bottom: 1px solid #02b3e4;
+ }
+ .feed-0 .entry-link:hover {
+    color: #02b3e4;
+ }
+
+/*Feed-1*/
+
+ .feed-1 .header {
+    background: #4caf50;
+ }
+ .feed-1 .slide-menu {
+    background: #4caf50;
+ }
+ .feed-1 .entry {
+    border-bottom: 1px solid #4caf50;
+ }
+ .feed-1 .entry-link:hover {
+    color: #4caf50;
+ }
+
+ /*Feed-2*/
+
+ .feed-2 .header {
+    background: #8A4182;
+ }
+ .feed-2 .slide-menu {
+    background: #8A4182;
+ }
+ .feed-2 .entry {
+    border-bottom: 1px solid #8A4182;
+ }
+ .feed-2 .entry-link:hover {
+    color: #8A4182;
+ }
+
+ /*Feed-3*/
+
+ .feed-3 .header {
+    background: #a6a825;
+ }
+ .feed-3 .slide-menu {
+    background: #a6a825;
+ }
+ .feed-3 .entry {
+    border-bottom: 1px solid #a6a825;
+ }
+ .feed-3 .entry-link:hover {
+    color: #a6a825;
+ }
+ 
+
+
+
