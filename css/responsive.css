@@ -1,0 +1,16 @@
+/*
+ *
+ * Desktop Breakpoint
+ *
+ */
+ @media screen and (min-width: 1024px) { 
+    .layout{
+        width:900px; 
+        margin-left:auto;
+        margin-right:auto;
+        overflow-x:hidden;
+    }
+    .header  {
+        width:900px; 
+    }
+ }
