@@ -31,7 +31,7 @@ $(function() {
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
-        it('URL are defined and is not empty', function() {
+        it('URL are defined and not empty', function() {
             allFeeds.forEach(function(feed) {
                 expect(feed.url).toBeDefined(); //url property is defined
                 expect(feed.url.length).not.toBe(0); //url property is not empty
@@ -43,7 +43,7 @@ $(function() {
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
-        it('Name are defined and is not empty', function() {
+        it('Name are defined and not empty', function() {
             allFeeds.forEach(function(feed) {
                 expect(feed.name).toBeDefined(); //name property is defined
                 expect(feed.name.length).not.toBe(0); //name property is not empty
@@ -64,7 +64,7 @@ $(function() {
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
-        it('Menu is hidden by default', function() {
+        it('The menu is hidden by default', function() {
             //By default
             //The (.menu-hidden) class in the (body) --> Hides the menu
             expect(body.hasClass("menu-hidden")).toBe(true); 
@@ -75,13 +75,13 @@ $(function() {
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
         */
-        it('When the Menu icon is clicked, the menu changes it visibility', function() {
+        it('When the menu icon is clicked, the menu changes it visibility', function() {
             //The (.menu-hidden) class in the (body), hides the menu
-            menuIcon.click(); //Click Menu Icon
+            menuIcon.click(); //Click menu Icon
             //The (.menu-hidden) class aren't in the (body)-> Shows the menu        
             expect(body.hasClass("menu-hidden")).toBe(false);
 
-            menuIcon.click();//Click Menu Icon
+            menuIcon.click();//Click menu Icon
             //The (.menu-hidden) class are in the (body)-> Hides the menu  
             expect(body.hasClass("menu-hidden")).toBe(true);
         });
@@ -104,7 +104,7 @@ $(function() {
             });
         });
         
-        it('There is at least a single .entry element in the .feed container', function(done) {
+        it('There is at least a single `.entry` element in the `.feed` container', function(done) {
             //The total number of .entry elements > 0
             expect($(".feed .entry").length).toBeGreaterThan(0);
             done();
@@ -138,7 +138,7 @@ $(function() {
              });
          });
          
-         it('When the content changes, a new feed is loaded', function(done) {
+         it('When new feed is loaded, the content changes', function(done) {
              //The .entry elements(id=0) are not the same that the .entry elements for (id=1)
              //The content changes -> A new feed is loaded
              expect(feed0).not.toBe(feed1);
